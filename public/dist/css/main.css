@@ -46,12 +46,7 @@ body {
     background-color: transparent;
     cursor: pointer;
     border: 0;
-    padding: 1rem 1.5rem;
-}
-
-.toggle-btn i {
-    font-size: 1.5rem;
-    color: #FFF;
+    padding: 1rem 1rem;
 }
 
 .sidebar-logo {
@@ -97,14 +92,15 @@ a.sidebar-link {
     white-space: nowrap;
     border-left: 3px solid transparent;
 }
+.active {
+    background-color: rgba(255, 255, 255, 0.205);
+    border-left: 3px solid  #c8d4c8;
+}
 .sidebar-link i,
 .dropdown-item i {
     font-size: 1.1rem;
     margin-right: .75rem;
-}
-.dropdown-item i:hover {
-    background-color: #13350cee;
-    color: #fff ;
+    /* color: #fff ; */
 }
 a.sidebar-link:hover {
     background-color: rgba(255, 255, 255, 0.205);
@@ -152,7 +148,8 @@ a.sidebar-link:hover {
 
 .navbar {
     height: 4rem;
-    background-color: #c8d4c8;
+    background-color: #bcdbb6ee;
+    box-shadow: 0px 2px 4px rgba(128, 121, 121, 0.219);
 }
 
 .navbar-expand .navbar-collapse {
@@ -162,7 +159,23 @@ a.sidebar-link:hover {
     height: 40px;
     width: 40px;
 }
+.navbar #sidebarCollapse {
+    display: none;
+}
 
-
+/* Hide the sidebar on Android devices */
+@media only screen and (max-width: 767px) and (hover: none) and (pointer: coarse) {
+    #sidebar {
+        display: none;
+    }
+    .navbar #sidebarCollapse {
+        background-color: transparent;
+        cursor: pointer;
+        border: 0;
+        padding: 1rem 1rem;
+        display: block;
+    }
+}
 
 @media (min-width: 768px) {}
+
